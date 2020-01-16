@@ -79,6 +79,10 @@ class ViewController: UIViewController {
     override func prepare( for segue: UIStoryboardSegue, sender: Any?){
         let imageviewcontroller: imageViewController = segue.destination as! imageViewController
         imageviewcontroller.extendimage = slideshowview.image
+        beforImage.isHidden = false
+        nextImage.isHidden = false
+        self.timer.invalidate()
+        playstopindex = true
     }
     
     @IBAction func unwind(_ segue: UIStoryboardSegue) {
