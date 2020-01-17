@@ -11,7 +11,10 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var nextImage: UIButton!
     @IBOutlet weak var beforImage: UIButton!
+    @IBOutlet weak var playstop: UIButton!
     @IBOutlet weak var slideshowview: UIImageView!
+    
+    
     
     var timer : Timer!
     var timer_sec: Int = 0
@@ -26,11 +29,13 @@ class ViewController: UIViewController {
     
     var playstopindex = true
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
         slideshowview.image = images[imagenumber]
+        playstop.setTitle("再生", for:.normal)
         
     }
     @objc func updateimage(_ timer: Timer){
@@ -67,11 +72,14 @@ class ViewController: UIViewController {
             nextImage.isHidden = true
             self.timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(updateimage(_:)), userInfo: nil, repeats: true)
             playstopindex = false
+            playstop.setTitle("停止", for:.normal)
         }else{
             beforImage.isHidden = false
             nextImage.isHidden = false
             self.timer.invalidate()
             playstopindex = true
+            playstop.setTitle("再生", for:.normal)
+            
         }
         
         
@@ -83,6 +91,7 @@ class ViewController: UIViewController {
         nextImage.isHidden = false
         self.timer.invalidate()
         playstopindex = true
+        playstop.setTitle("再生", for:.normal)
     }
     
     @IBAction func unwind(_ segue: UIStoryboardSegue) {

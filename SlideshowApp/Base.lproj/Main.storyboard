@@ -74,6 +74,7 @@
                     <connections>
                         <outlet property="beforImage" destination="fVr-nI-fDe" id="LCG-7d-CBo"/>
                         <outlet property="nextImage" destination="2RW-CQ-TJq" id="W0X-Hk-Rfp"/>
+                        <outlet property="playstop" destination="Itb-yX-PFf" id="ewg-fC-eHg"/>
                         <outlet property="slideshowview" destination="CMR-iF-Uef" id="GIF-oE-Lkp"/>
                     </connections>
                 </viewController>
